@@ -1,4 +1,5 @@
+import classes from './Items.module.css';
 const Items: React.FC<{text: string}> = (props) =>{
-    return <li>{props.text}</li>
+    return <li className={classes.item}>{props.text}</li>
 }
 export default Items;
