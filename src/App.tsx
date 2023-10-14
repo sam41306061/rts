@@ -17,11 +17,16 @@ function App() {
       return prevTodos.concat(newTodo);
     })
    }
+  const onRemoveTodoHandler = (todoId: string) =>{
+    setTodos((prevTodos) =>{
+      return prevTodos.filter(todo => todo.id !== todoId);
+    })
+  }
 
   return (
     <div className="App">
       <NewTodo onAddTodo={addTodoHandler} />
-      <ToDos items={todos} />
+      <ToDos items={todos} onRemoveTodo={onRemoveTodoHandler} />
     </div>
   );
 }
